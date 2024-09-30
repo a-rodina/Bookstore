@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    height: 104px;
+    background-color: #D7E4FD;
+}
+.header-wrap {
+    max-width: 1120px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: #313037;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header-navigation {
+    display: flex;
+    width: 184px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navigation__icons {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.my-icon {
+    font-size: 24px;
+    color: #313037;
+}

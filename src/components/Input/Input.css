@@ -1,0 +1,50 @@
+.form-wrap {
+    padding: 10px 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    color: #313037;
+}
+
+.input {
+    display: block;
+    width: 480px;
+    line-height: 56px;
+    outline: none;
+    background-color: #FFFF;
+    border: 1px solid #E7E7E7;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 20px;
+    color: #313037;
+}
+
+.input:focus {
+    border: 2px solid #E7E7E7;
+}
+
+.input:disabled {
+    background-color: #E7E7E7;
+}
+
+.error {
+    display: block;
+    width: 480px;
+    line-height: 56px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #FC857F;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 20px;
+    color: #313037;
+}
