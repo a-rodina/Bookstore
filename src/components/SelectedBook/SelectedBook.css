@@ -1,0 +1,93 @@
+.selected-book {
+    padding: 72px 0;
+}
+
+.icon-back {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 37px;
+}
+
+.selected-book__first-block {
+    width: 100%;
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+}
+
+.selected-book__first-block-image {
+    width: 544px;
+    height: 472px;
+    background-color: #FEE9E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-book__image {
+    object-fit: contain;
+    object-position: center;
+    width: 80%;
+    height: 80%;
+}
+
+.selected-book__first-block-about {
+    width: 448px;
+    height: 472px;
+}
+
+.selected-book__price {
+    color: #313037;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+    margin: 41px 0 24px 0;
+}
+
+.selected-book__info-list {
+    width: 100%;
+    margin-bottom: 91px;
+}
+
+.selected-book__info-list-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-title {
+    color: #A8A8A8;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+}
+
+.list-text {
+    color: #313037;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: right;
+}
+
+.selected-book__button {
+    width: 100%;
+    height: 56px;
+    border-radius: none;
+    border: none;
+    background-color: #313037;
+    color: #FFFF;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    font-family: "Bebas Neue";
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}

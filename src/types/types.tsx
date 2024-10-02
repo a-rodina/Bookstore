@@ -7,3 +7,7 @@ export type TInput = {
     errorText?: string,
     isError?: boolean
 }
+
+export type TObject = {
+    book: any,
+}
