@@ -1,13 +1,18 @@
+import { Provider } from 'react-redux';
 import './App.css';
 import Header from './components/Header/Header';
-import SelectedBook from './components/SelectedBook/SelectedBook';
+import AllBooks from './pages/AllBooks/AllBooks';
+import store from './store/store';
 
 
 function App() {
   return (
     <>
-    <Header/>
-    <SelectedBook/>
+    <Provider store={store}>
+      <Header/>
+      <AllBooks></AllBooks>  
+    </Provider>
+    
     </>
   );
 }

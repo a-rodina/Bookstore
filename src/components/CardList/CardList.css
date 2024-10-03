@@ -1,0 +1,10 @@
+.all-books__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.all-books__list-item {
+    margin-bottom: 30px;
+}

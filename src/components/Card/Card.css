@@ -1,6 +1,5 @@
 .card-wrap {
-    width: 352px;
-    height: 454px;
+    width: 350px;
 }
 
 .card__image-bl0ck {
@@ -22,28 +21,19 @@
 }
 
 .card__about-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     color: #313037;
     font-size: 24px;
     font-weight: 700;
-    line-height: 32px;
     text-align: left;
-    margin-bottom: 32px;
-}
-
-.card__about-subtitle {
-    color: #A8A8A8;
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .card__about-price {
     color: #313037;
     font-size: 24px;
     font-weight: 700;
-    line-height: 32px;
     text-align: left;
 }

@@ -9,7 +9,6 @@ function Card({book}: TObject) {
             </div>
             <div className='card__about'>
                 <p className='card__about-title'>{book.title}</p>
-                <p className='card__about-subtitle'>{book.subtitle}</p>
                 <p className='card__about-price'>{book.price}</p>
             </div>
         </div>
