@@ -1,0 +1,17 @@
+.footer-wrap {
+    border-top: 1px solid #E7E7E7;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-text {
+    display: block;
+    padding: 36px 0 35px;
+    color: #A8A8A8;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+}

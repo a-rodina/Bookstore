@@ -12,7 +12,7 @@
 .selected-book__first-block {
     width: 100%;
     display: flex;
-    margin-top: 48px;
+    margin: 48px 0 72px;
     justify-content: space-between;
 }
 
@@ -90,4 +90,44 @@
     font-family: "Bebas Neue";
     letter-spacing: 0.05em;
     cursor: pointer;
+}
+
+.selected-book__second-block {
+    width: 100%;
+}
+
+.selected-book__second-block-title {
+    color: #313037;
+    font-family: 'Inter';
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 49px;
+}
+
+.selected-book__second-block-content {
+    color: #313037;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    margin-bottom: 48px;
+}
+
+.selected-book__second-block-like {
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #313037;
+    padding: 10px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.like-text {
+    color: #313037;
+    font-size: 18px;
+    font-weight: 500;
 }

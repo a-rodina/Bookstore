@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Input from '../Input/Input';
 import './Header.css';
 
@@ -5,7 +6,7 @@ function Header() {
     return ( <>
         <header className='header'>
             <div className='header-wrap'>
-                <p className='logo'>BOOKSTORE</p>
+                <Link to={`/`}><p className='logo'>BOOKSTORE</p></Link>
                 <Input inputType='text' placeholderText='Search' isActive={false}></Input>
                 <ul className='header-navigation'>
                     <li className='header-navigation__icons'>

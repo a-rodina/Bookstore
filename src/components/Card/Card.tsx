@@ -4,7 +4,7 @@ import './Card.css';
 function Card({book}: TObject) {
     return (  <>
         <div className='card-wrap'>
-            <div className='card__image-bl0ck'>
+            <div className='card__image-block'>
                 <img className='card__image' alt='image' src={book.image}/>
             </div>
             <div className='card__about'>

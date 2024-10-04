@@ -1,39 +1,50 @@
+import { Link } from 'react-router-dom';
+import { TObject } from '../../types/types';
 import Title from '../Title/Title';
 import './SelectedBook.css';
 
-function SelectedBook() {
+
+function SelectedBook({book}: TObject) {
     return ( <>
         <section className='selected-book'>
             <div className='container'>
-                <div className='icon-back'>
+                <Link to={`/`} className='icon-back'>
                     <i className="fa-solid fa-arrow-left-long my-icon"></i>
-                </div>
-                <Title text='Book name'></Title>
+                </Link>
+                <Title text={book.title}></Title>
                 <div className='selected-book__first-block'>
                     <div className='selected-book__first-block-image'>
-                        <img className='selected-book__image' alt='image' src="https://itbook.store/img/books/9781484206485.png"/>
+                        <img className='selected-book__image' alt='image' src={book.image}/>
                     </div>
                     <div className='selected-book__first-block-about'>
-                        <p className='selected-book__price'>$ 41.57</p>
+                        <p className='selected-book__price'>{book.price}</p>
                         <ul className='selected-book__info-list'>
                             <li className='selected-book__info-list-item'>
                                 <p className='list-title'>Authors</p>
-                                <p className='list-text'>Lentin Joseph, Aleena Johny</p>
+                                <p className='list-text'>{book.authors}</p>
                             </li>
                             <li className='selected-book__info-list-item'>
                                 <p className='list-title'>Publisher</p>
-                                <p className='list-text'>Apress, 2022</p>
+                                <p className='list-text'>{book.year}</p>
                             </li>                            
                             <li className='selected-book__info-list-item'>
-                                <p className='list-title'>Language</p>
-                                <p className='list-text'>English</p>
+                                <p className='list-title'>Rating</p>
+                                <p className='list-text'>{book.rating}</p>
                             </li>
                             <li className='selected-book__info-list-item'>
-                                <p className='list-title'>Format</p>
-                                <p className='list-text'>Paper book / ebook (PDF)</p>
+                                <p className='list-title'>Pages</p>
+                                <p className='list-text'>{book.pages}</p>
                             </li>
                         </ul>
                         <button className='selected-book__button'>add to cart</button>
+                    </div>
+                </div>
+                <div className='selected-book__second-block'>
+                    <h2 className='selected-book__second-block-title'>Description</h2>
+                    <p className='selected-book__second-block-content'>{book.desc}</p>
+                    <div className='selected-book__second-block-like'>
+                        <p className='like-text'>Add to favorites</p>
+                        <i className="fa-regular fa-heart my-icon"></i>
                     </div>
                 </div>
             </div>

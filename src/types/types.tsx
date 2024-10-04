@@ -19,7 +19,7 @@ export type TData = {
     "authors"?: string,
     "publisher"?: string,
     "isbn10"?: string,
-    "isbn13": string,
+    "isbn13": number,
     "pages"?: string, 
     "year"?: string, 
     "rating"?: string, 
