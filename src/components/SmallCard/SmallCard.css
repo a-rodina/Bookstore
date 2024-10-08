@@ -1,0 +1,66 @@
+.small-card__wrap {
+    width: 100%;
+    padding-bottom: 49px;
+    border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-card__image-block {
+    width: 256px;
+    height: 192px;
+    background-color: #D7E4FD;
+}
+
+.small-card__image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.small-card__right-side {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-card__about-block {
+    width: 446px;
+}
+
+.small-card__title {
+    color: #313037;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    margin-bottom: 34px;
+}
+
+.small-card__count {
+    width: 168px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-card__count-element {
+    color: #313037;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+}
+
+.small-card__price {
+    color: #313037;
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+}
