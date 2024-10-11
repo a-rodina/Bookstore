@@ -9,7 +9,7 @@ function SmallCard({book}: TObject) {
             </div>
             <div className='small-card__right-side'>
                 <div className='small-card__about-block'>
-                    <p className='small-card__title'>{book.titel}</p>
+                    <p className='small-card__title'>{book.title}</p>
                     <div className='small-card__count'>
                         <span className='small-card__count-element'>
                             <i className="fa-solid fa-minus"></i>
@@ -25,7 +25,6 @@ function SmallCard({book}: TObject) {
                     <i className="fa-solid fa-xmark my-icon"></i>
                 </div>
             </div>
-            
         </div>
     </> );
 }

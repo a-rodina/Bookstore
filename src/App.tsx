@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import SearchPage from './pages/SearchPage/SearchPage';
 import CartPage from './pages/CartPage/CartPage';
+import FavoritePage from './pages/FavoritePage/FavoritePage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/:isbn13' element={<SelectedPage/>}/>
           <Route path='/search' element={<SearchPage/>}/>
           <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/favorite' element={<FavoritePage/>}/>
         </Routes>
         <Footer/>
       </Provider>

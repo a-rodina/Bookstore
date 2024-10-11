@@ -10,7 +10,7 @@ function Header() {
                 <Link to={`/search`}><Input inputType='text' placeholderText='Search' isActive={false}></Input></Link>
                 <ul className='header-navigation'>
                     <li className='header-navigation__icons'>
-                        <i className="fa-solid fa-heart my-icon"></i>
+                        <Link to={`/favorite`}><i className="fa-solid fa-heart my-icon"></i></Link>
                     </li>
                     <li className='header-navigation__icons'>
                         <Link to={`/cart`}><i className="fa-solid fa-cart-shopping my-icon"></i></Link>

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 
 export const getBooks = createAsyncThunk(
     "book/getBooks", 
@@ -42,12 +42,18 @@ const bookSlice = createSlice({
         books: [],
         error: null,
         status: null, 
-        book: null
+        book: null, 
+        cart: [], 
+        favorites: []
     },
     reducers: {
-        // addToFavorite(state: any, {payload}: {payload :any}) {
-        //     state.favorites.push(payload);
-        // },
+        addToCartRedux(state: any, {payload}: {payload :any}) {
+            state.cart.push(payload);
+        },
+        addToFavoriteRedux(state: any, {payload}: {payload :any}) {
+            state.favorites.push(payload);
+            console.log(current(state.favorites))
+        }
         // changeActiveTab(state: any, {payload}: {payload :any}) {
         //     state.activeTab = payload;
         // }
@@ -85,4 +91,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {} = actions;
+export const {addToCartRedux, addToFavoriteRedux} = actions;

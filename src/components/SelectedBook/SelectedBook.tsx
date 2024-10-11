@@ -4,7 +4,8 @@ import Title from '../Title/Title';
 import './SelectedBook.css';
 
 
-function SelectedBook({book}: TObject) {
+function SelectedBook({book, addToCart, addToFavorites}: TObject) {
+
     return ( <>
         <section className='selected-book'>
             <div className='container'>
@@ -36,13 +37,13 @@ function SelectedBook({book}: TObject) {
                                 <p className='list-text'>{book.pages}</p>
                             </li>
                         </ul>
-                        <button className='selected-book__button'>add to cart</button>
+                        <button className='selected-book__button' onClick={() => addToCart?.(book)}>add to cart</button>
                     </div>
                 </div>
                 <div className='selected-book__second-block'>
                     <h2 className='selected-book__second-block-title'>Description</h2>
                     <p className='selected-book__second-block-content'>{book.desc}</p>
-                    <div className='selected-book__second-block-like'>
+                    <div className='selected-book__second-block-like' onClick={() => addToFavorites?.(book)}>
                         <p className='like-text'>Add to favorites</p>
                         <i className="fa-regular fa-heart my-icon"></i>
                     </div>
