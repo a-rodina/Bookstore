@@ -22,6 +22,10 @@ function CartPage() {
                 <Link to={`/`} className='icon-back'><i className="fa-solid fa-arrow-left-long my-icon"></i></Link>
                 <Title text='Your Cart'></Title>
                 {data.cart.length === 0 ? <h1 className='container'>Your cart is empty</h1> : <SmallCardList books={data.cart}></SmallCardList>}
+                <div className='section-cart__counter-block'>
+                    <p className='section-cart__counter-block-text'>Total :</p>
+                    <p className='section-cart__counter-block-text'>$81.76</p>
+                </div>
             </div>
         </section>
     </> );

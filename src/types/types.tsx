@@ -11,7 +11,9 @@ export type TInput = {
 export type TObject = {
     book: any,
     addToCart?: (book: any) => void,
-    addToFavorites?: (book: any) => void
+    addToFavorites?: (book: any) => void, 
+    removeBookFromCart?: (book: any) => void, 
+    removeBookFromFavorite?: (book: any) => void
 }
 
 export type TData = {

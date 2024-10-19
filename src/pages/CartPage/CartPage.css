@@ -1,3 +1,21 @@
 .section-cart {
     padding: 72px 0;
 }
+
+.section-cart__counter-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-cart__counter-block-text { 
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+    margin-right: 25px;
+}
+
+.section-cart__counter-block-text:last-child {
+    margin-right: 0;
+}

@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
 import { TObject } from '../../types/types';
 import './SmallCard.css';
 
-function SmallCard({book}: TObject) {
+function SmallCard({book, removeBookFromCart}: TObject) {
     return ( <>
         <div className='small-card__wrap'>
-            <div className='small-card__image-block'>
+            <Link to={book.isbn13} className='small-card__image-block'>
                 <img className='small-card__image' alt='image' src={book.image}/>
-            </div>
+            </Link>
             <div className='small-card__right-side'>
                 <div className='small-card__about-block'>
                     <p className='small-card__title'>{book.title}</p>
                     <div className='small-card__count'>
                         <span className='small-card__count-element'>
-                            <i className="fa-solid fa-minus"></i>
+                            <i className="fa-solid fa-minus my-icon"></i>
                         </span>
                         <span className='small-card__count-element'>1</span>
                         <span className='small-card__count-element'>
@@ -21,7 +22,7 @@ function SmallCard({book}: TObject) {
                     </div>
                 </div>
                 <p className='small-card__price'>{book.price}</p>
-                <div className='small-card__icon'>
+                <div className='small-card__icon' onClick={() => removeBookFromCart?.(book)}>
                     <i className="fa-solid fa-xmark my-icon"></i>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { TData } from "../types/types";
 
 export const getBooks = createAsyncThunk(
     "book/getBooks", 
@@ -52,7 +53,14 @@ const bookSlice = createSlice({
         },
         addToFavoriteRedux(state: any, {payload}: {payload :any}) {
             state.favorites.push(payload);
-            console.log(current(state.favorites))
+        },
+        removeBookFromCartRedux(state: any, {payload}: {payload :any}) {
+            const index = state.cart.findIndex((item: TData) => item.isbn13 === payload);
+            state.cart.splice(index, 1);
+        }, 
+        removeBookFromFavoriteRedux(state: any, {payload}: {payload :any}) {
+            const index = state.favorites.findIndex((item: TData) => item.isbn13 === payload);
+            state.favorites.splice(index, 1);
         }
         // changeActiveTab(state: any, {payload}: {payload :any}) {
         //     state.activeTab = payload;
@@ -74,6 +82,7 @@ const bookSlice = createSlice({
         }),
         builder.addCase(getOneBook.pending, (state: any) => {
             state.status = 'loading';
+            state.book = null;
             state.error = null;
         }), 
         builder.addCase(getOneBook.fulfilled, (state: any, {payload}: {payload :any}) => {
@@ -91,4 +100,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux} = actions;
