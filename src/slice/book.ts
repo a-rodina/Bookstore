@@ -45,14 +45,17 @@ const bookSlice = createSlice({
         status: null, 
         book: null, 
         cart: [], 
-        favorites: []
+        favorites: [], 
+        total: 0
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {
             state.cart.push(payload);
         },
         addToFavoriteRedux(state: any, {payload}: {payload :any}) {
-            state.favorites.push(payload);
+            if (!state.favorites.find((item: TData) => item.isbn13 === payload.isbn13)) {
+                state.favorites.push(payload);
+            }
         },
         removeBookFromCartRedux(state: any, {payload}: {payload :any}) {
             const index = state.cart.findIndex((item: TData) => item.isbn13 === payload);
@@ -61,10 +64,13 @@ const bookSlice = createSlice({
         removeBookFromFavoriteRedux(state: any, {payload}: {payload :any}) {
             const index = state.favorites.findIndex((item: TData) => item.isbn13 === payload);
             state.favorites.splice(index, 1);
+        }, 
+        countCartRedux(state: any) {
+            const result = state.cart.reduce((item: any, count: number) => {
+                return item.price + count;
+            }, 0);
+            console.log(result)
         }
-        // changeActiveTab(state: any, {payload}: {payload :any}) {
-        //     state.activeTab = payload;
-        // }
     },
     extraReducers: (builder) => {
         return builder.addCase(getBooks.pending, (state: any) => {
@@ -100,4 +106,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux, countCartRedux} = actions;

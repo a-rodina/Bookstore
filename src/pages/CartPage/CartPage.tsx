@@ -4,7 +4,7 @@ import Title from '../../components/Title/Title';
 import SmallCardList from '../../components/SmallCardList/SmallCardList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getBooks } from '../../slice/book';
+import { countCartRedux, getBooks } from '../../slice/book';
 
 function CartPage() {
 
@@ -15,7 +15,6 @@ function CartPage() {
         dispatch(getBooks())
     }, [])
 
-
     return ( <>
         <section className='section-cart'>
             <div className='container'>
@@ -24,7 +23,7 @@ function CartPage() {
                 {data.cart.length === 0 ? <h1 className='container'>Your cart is empty</h1> : <SmallCardList books={data.cart}></SmallCardList>}
                 <div className='section-cart__counter-block'>
                     <p className='section-cart__counter-block-text'>Total :</p>
-                    <p className='section-cart__counter-block-text'>$81.76</p>
+                    <p className='section-cart__counter-block-text'>{data.total}</p>
                 </div>
             </div>
         </section>

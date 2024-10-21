@@ -4,7 +4,7 @@ import Title from '../Title/Title';
 import './SelectedBook.css';
 
 
-function SelectedBook({book, addToCart, addToFavorites}: TObject) {
+function SelectedBook({book, addToCart, addToFavorites, countCart}: TObject) {
 
     return ( <>
         <section className='selected-book'>
@@ -37,7 +37,7 @@ function SelectedBook({book, addToCart, addToFavorites}: TObject) {
                                 <p className='list-text'>{book.pages}</p>
                             </li>
                         </ul>
-                        <button className='selected-book__button' onClick={() => addToCart?.(book)}>add to cart</button>
+                        <button className='selected-book__button' onClick={() => {addToCart?.(book); countCart?.()}}>add to cart</button>
                     </div>
                 </div>
                 <div className='selected-book__second-block'>

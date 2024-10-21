@@ -13,7 +13,8 @@ export type TObject = {
     addToCart?: (book: any) => void,
     addToFavorites?: (book: any) => void, 
     removeBookFromCart?: (book: any) => void, 
-    removeBookFromFavorite?: (book: any) => void
+    removeBookFromFavorite?: (book: any) => void, 
+    countCart?: () => void
 }
 
 export type TData = {
