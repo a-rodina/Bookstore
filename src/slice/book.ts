@@ -35,18 +35,34 @@ export const getOneBook = createAsyncThunk(
     }
 )
 
+export const searchBook = createAsyncThunk(
+    "book/searchBook", 
+    async function (search: string | undefined, {rejectWithValue}) {
+        try {
+            const response = await fetch(`https://api.itbook.store/1.0/search/${search}`);
+            if(!response.ok) {
+                throw new Error("Не удалось загрузить данные")
+            }
+            const data = await response.json();
+            return data;
+        }
+        catch (error) {
+            return rejectWithValue((error as Error).message)
+        }
+    }
+)
+
 const bookSlice = createSlice({
     name: 'book',
     initialState: {
-        // favorites: [], 
-        // activeTab: 'all',
         books: [],
         error: null,
         status: null, 
         book: null, 
         cart: [], 
         favorites: [], 
-        total: 0
+        total: 0, 
+        search: []
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {
@@ -66,10 +82,10 @@ const bookSlice = createSlice({
             state.favorites.splice(index, 1);
         }, 
         countCartRedux(state: any) {
-            const result = state.cart.reduce((item: any, count: number) => {
-                return item.price + count;
+            const result = state.cart.reduce((count: number, item: any) => {
+                return Number(item.price.slice(1)) + count;
             }, 0);
-            console.log(result)
+            state.total = result;
         }
     },
     extraReducers: (builder) => {
@@ -99,7 +115,20 @@ const bookSlice = createSlice({
         builder.addCase(getOneBook.rejected, (state: any, {payload}: {payload :any}) => {
             state.status = 'rejected';
             state.error = payload;
-        })
+        }),
+        builder.addCase(searchBook.pending, (state: any) => {
+            state.status = 'loading';
+            state.error = null;
+        }), 
+        builder.addCase(searchBook.fulfilled, (state: any, {payload}: {payload :any}) => {
+            state.status = 'resolved';
+            state.error = null;
+            state.search = payload.books;
+        }), 
+        builder.addCase(searchBook.rejected, (state: any, {payload}: {payload :any}) => {
+            state.status = 'rejected';
+            state.error = payload;
+        })      
     }
 })
 
