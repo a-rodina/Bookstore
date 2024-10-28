@@ -26,10 +26,23 @@
 }
 
 .header-navigation__icons {
-    width: 56px;
-    height: 56px;
+    width: 46px;
+    height: 46px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.total-cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #e95f5f;
+    text-align: center;
 }
 
 .my-icon {

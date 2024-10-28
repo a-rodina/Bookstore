@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { TObject } from '../../types/types';
 import './SmallCard.css';
+import { useSelector } from 'react-redux';
 
-function SmallCard({book, removeBookFromCart}: TObject) {
+function SmallCard({book, removeBookFromCart, addToCart}: TObject) {
+
+    const data = useSelector((state: any) => state.book);
+
     return ( <>
         <div className='small-card__wrap'>
             <Link to={book.isbn13} className='small-card__image-block'>
@@ -12,11 +16,11 @@ function SmallCard({book, removeBookFromCart}: TObject) {
                 <div className='small-card__about-block'>
                     <p className='small-card__title'>{book.title}</p>
                     <div className='small-card__count'>
-                        <span className='small-card__count-element'>
+                        <span className='small-card__count-element' onClick={() => removeBookFromCart?.(book)}>
                             <i className="fa-solid fa-minus my-icon"></i>
                         </span>
-                        <span className='small-card__count-element'>1</span>
-                        <span className='small-card__count-element'>
+                        <span className='small-card__count-element'>{data.totalCart}</span>
+                        <span className='small-card__count-element' onClick={() => addToCart?.(book)}>
                             <i className="fa-solid fa-plus my-icon"></i>
                         </span>
                     </div>

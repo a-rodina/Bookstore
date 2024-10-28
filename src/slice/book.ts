@@ -62,7 +62,8 @@ const bookSlice = createSlice({
         cart: [], 
         favorites: [], 
         total: 0, 
-        search: []
+        search: [], 
+        totalCart: 0
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {
@@ -86,6 +87,10 @@ const bookSlice = createSlice({
                 return Number(item.price.slice(1)) + count;
             }, 0);
             state.total = result;
+        }, 
+        calcTotalCartRedux(state: any) {
+            console.log(state.cart.length)
+            state.totalCart = state.cart.length;
         }
     },
     extraReducers: (builder) => {
@@ -135,4 +140,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux, countCartRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux, countCartRedux, calcTotalCartRedux} = actions;

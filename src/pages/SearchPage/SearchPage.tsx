@@ -7,6 +7,8 @@ function SearchPage() {
 
     const data = useSelector((state: any) => state.book);
 
+    console.log(data.search.length)
+
     return ( <>
         <div className='section__search-books'>
             <div className="container">

@@ -3,7 +3,7 @@ import { TData } from '../../types/types';
 import SmallCard from '../SmallCard/SmallCard';
 import './SmallCardList.css';
 import { useDispatch } from 'react-redux';
-import { removeBookFromCartRedux } from '../../slice/book';
+import { addToCartRedux, calcTotalCartRedux, countCartRedux, removeBookFromCartRedux } from '../../slice/book';
 
 function SmallCardList({books}: {books: TData[]}) {
 
@@ -11,12 +11,20 @@ function SmallCardList({books}: {books: TData[]}) {
 
     function removeBookFromCart(book: any) {
         dispatch(removeBookFromCartRedux(book))
+        dispatch(countCartRedux())
+        dispatch(calcTotalCartRedux())
+    }
+
+    function addToCart(book: any) {
+        dispatch(addToCartRedux(book))
+        dispatch(countCartRedux())
+        dispatch(calcTotalCartRedux())
     }
 
     return ( <>
         <section className='section__small-card-list'>
             <ul className='small-card-list'>
-                {books.map((item: any) => <li key={item.isbn13} className='small-card-list__item'><SmallCard removeBookFromCart={removeBookFromCart} book={item}/></li>)}
+                {books.map((item: any) => <li key={item.isbn13} className='small-card-list__item'><SmallCard addToCart={addToCart} removeBookFromCart={removeBookFromCart} book={item}/></li>)}
             </ul>
         </section>
     </> );
