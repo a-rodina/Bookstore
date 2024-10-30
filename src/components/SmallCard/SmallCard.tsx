@@ -9,8 +9,10 @@ function SmallCard({book, removeBookFromCart, addToCart}: TObject) {
 
     return ( <>
         <div className='small-card__wrap'>
-            <Link to={book.isbn13} className='small-card__image-block'>
-                <img className='small-card__image' alt='image' src={book.image}/>
+            <Link to={`/${book.isbn13}`}>
+                <div className='small-card__image-block'>
+                    <img className='small-card__image' alt='image' src={book.image}/>
+                </div>
             </Link>
             <div className='small-card__right-side'>
                 <div className='small-card__about-block'>

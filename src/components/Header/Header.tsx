@@ -15,6 +15,7 @@ function Header() {
                 <ul className='header-navigation'>
                     <li className='header-navigation__icons'>
                         <Link to={`/favorite`}><i className="fa-solid fa-heart my-icon"></i></Link>
+                        <div className='total-favorites'>{data.totalFavorites}</div>
                     </li>
                     <li className='header-navigation__icons'>
                         <Link to={`/cart`}><i className="fa-solid fa-cart-shopping my-icon"></i></Link>

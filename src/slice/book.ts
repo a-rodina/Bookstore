@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { TData } from "../types/types";
+import { isConstructSignatureDeclaration } from "typescript";
 
 export const getBooks = createAsyncThunk(
     "book/getBooks", 
@@ -63,7 +64,8 @@ const bookSlice = createSlice({
         favorites: [], 
         total: 0, 
         search: [], 
-        totalCart: 0
+        totalCart: 0, 
+        totalFavorites: 0
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {
@@ -89,8 +91,10 @@ const bookSlice = createSlice({
             state.total = result;
         }, 
         calcTotalCartRedux(state: any) {
-            console.log(state.cart.length)
             state.totalCart = state.cart.length;
+        }, 
+        calcTotalFavoritesRedux(state: any) {
+            state.totalFavorites = state.favorites.length;
         }
     },
     extraReducers: (builder) => {
@@ -140,4 +144,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux, countCartRedux, calcTotalCartRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, removeBookFromFavoriteRedux, countCartRedux, calcTotalCartRedux, calcTotalFavoritesRedux} = actions;

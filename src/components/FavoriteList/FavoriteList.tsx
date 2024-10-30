@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import { TData } from '../../types/types';
 import './FavoriteList.css';
 import FavoriteCard from '../FavoriteCard/FavoriteCard';
 import { useDispatch } from 'react-redux';
-import { removeBookFromFavoriteRedux } from '../../slice/book';
+import { calcTotalFavoritesRedux, removeBookFromFavoriteRedux } from '../../slice/book';
 
 function FavoriteList({books}: {books: TData[]}) {
 
@@ -11,6 +10,7 @@ function FavoriteList({books}: {books: TData[]}) {
 
     function removeBookFromFavorite(book: any) {
         dispatch(removeBookFromFavoriteRedux(book))
+        dispatch(calcTotalFavoritesRedux())
     }
 
     return ( <>

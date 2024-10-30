@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { TData } from '../../types/types';
 import SmallCard from '../SmallCard/SmallCard';
 import './SmallCardList.css';

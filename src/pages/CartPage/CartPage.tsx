@@ -4,7 +4,7 @@ import Title from '../../components/Title/Title';
 import SmallCardList from '../../components/SmallCardList/SmallCardList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { countCartRedux, getBooks } from '../../slice/book';
+import { getBooks } from '../../slice/book';
 
 function CartPage() {
 

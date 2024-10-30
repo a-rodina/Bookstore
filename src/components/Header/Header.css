@@ -45,6 +45,17 @@
     text-align: center;
 }
 
+.total-favorites {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #53da80;
+    text-align: center;
+}
+
 .my-icon {
     font-size: 24px;
     color: #313037;

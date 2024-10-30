@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { getBooks } from '../../slice/book';
 import { Link } from 'react-router-dom';
 import Title from '../../components/Title/Title';
-import SmallCardList from '../../components/SmallCardList/SmallCardList';
 import FavoriteList from '../../components/FavoriteList/FavoriteList';
 
 function FavoritePage() {
