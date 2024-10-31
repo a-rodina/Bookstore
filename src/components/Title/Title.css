@@ -1,10 +1,21 @@
-.main-title {
+.main-title-light {
     margin: 32px 0 48px;
     font-family: 'Inter';
     font-size: 56px;
     font-weight: 700;
     line-height: 64px;
     text-align: left;
+    color:#313037;
+}
+
+.main-title-dark {
+    margin: 32px 0 48px;
+    font-family: 'Inter';
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    text-align: left;
+    color:#eeeeee;
 }
 
 

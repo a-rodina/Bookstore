@@ -9,23 +9,26 @@ import Footer from './components/Footer/Footer';
 import SearchPage from './pages/SearchPage/SearchPage';
 import CartPage from './pages/CartPage/CartPage';
 import FavoritePage from './pages/FavoritePage/FavoritePage';
+import ThemeContext from './providers/ThemeContext';
 
 
 function App() {
   return (
     <>
     <BrowserRouter>
-      <Provider store={store}>
-        <Header/>
-        <Routes>
-          <Route path='/' element={<AllBooks/>}/>
-          <Route path='/:isbn13' element={<SelectedPage/>}/>
-          <Route path='/search' element={<SearchPage/>}/>
-          <Route path='/cart' element={<CartPage/>}/>
-          <Route path='/favorite' element={<FavoritePage/>}/>
-        </Routes>
-        <Footer/>
-      </Provider>
+      <ThemeContext>
+        <Provider store={store}>
+          <Header/>
+          <Routes>
+            <Route path='/' element={<AllBooks/>}/>
+            <Route path='/:isbn13' element={<SelectedPage/>}/>
+            <Route path='/search' element={<SearchPage/>}/>
+            <Route path='/cart' element={<CartPage/>}/>
+            <Route path='/favorite' element={<FavoritePage/>}/>
+          </Routes>
+          <Footer/>
+        </Provider>
+      </ThemeContext>
     </BrowserRouter>    
     </>
   );

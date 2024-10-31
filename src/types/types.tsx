@@ -32,3 +32,8 @@ export type TData = {
     "image": string, 
     "url"?: string
 }
+
+export type TContext = [
+    string, 
+    (value: string) => void 
+]

@@ -1,3 +1,23 @@
-.section__search-books {
+.section__search-books-light {
     padding: 32px 0;
+    background-color: #fff;
+}
+
+.section__search-books-dark {
+    padding: 32px 0;
+    background-color:  #3f3e3e;
+}
+
+.theme-block {
+    height: 100vh;
+}
+
+.search-text-light {
+    color: #313037;
+    font-size: 20px;
+}
+
+.search-text-dark {
+    color: #eeeeee;
+    font-size: 20px;
 }

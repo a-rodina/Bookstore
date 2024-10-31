@@ -132,7 +132,11 @@ const bookSlice = createSlice({
         builder.addCase(searchBook.fulfilled, (state: any, {payload}: {payload :any}) => {
             state.status = 'resolved';
             state.error = null;
-            state.search = payload.books;
+            if (payload.books === undefined) {
+                state.search = [];
+            } else {
+                state.search = payload.books;
+            }
         }), 
         builder.addCase(searchBook.rejected, (state: any, {payload}: {payload :any}) => {
             state.status = 'rejected';

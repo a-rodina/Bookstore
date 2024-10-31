@@ -1,3 +1,11 @@
+.footer-light {
+    background-color: #FFFF;
+}
+
+.footer-dark {
+    background-color: #3f3e3e;
+}
+
 .footer-wrap {
     border-top: 1px solid #E7E7E7;
     display: flex;
