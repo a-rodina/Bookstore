@@ -1,0 +1,9 @@
+.selected-page__wrap-light {
+    padding: 72px 0;
+    background-color: #FFFF;
+}
+
+.selected-page__wrap-dark {
+    padding: 72px 0;
+    background-color: #3f3e3e;
+}
