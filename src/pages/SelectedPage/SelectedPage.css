@@ -1,9 +1,11 @@
 .selected-page__wrap-light {
     padding: 72px 0;
+    min-height: calc(100vh - 104px);
     background-color: #FFFF;
 }
 
 .selected-page__wrap-dark {
     padding: 72px 0;
+    min-height: calc(100vh - 104px);
     background-color: #3f3e3e;
 }

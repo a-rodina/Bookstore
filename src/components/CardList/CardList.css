@@ -1,10 +1,22 @@
 .all-books__list {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 -15px;
 }
 
 .all-books__list-item {
-    margin-bottom: 30px;
+    margin: 0 15px 30px;
+}
+
+@media (max-width: 1126px) {
+    .all-books__list {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 756px) {
+    .all-books__list {
+        justify-content: center;
+    }
 }

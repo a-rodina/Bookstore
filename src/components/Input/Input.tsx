@@ -16,7 +16,6 @@ function Input({compound, inputType, title, placeholderText, isActive, errorText
     return ( 
         <>
             <div className='form-wrap'>
-                <label className='label' htmlFor={compound}>{title}</label>
                 <input style={{outline : isError ? "2px solid #FD3419" : "none"}} 
                 className='input' 
                 onChange={(event) => {setInputText(event.target.value); getSearchText(event.target.value)}} 

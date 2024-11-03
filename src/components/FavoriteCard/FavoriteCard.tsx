@@ -16,7 +16,11 @@ function FavoriteCard({book, removeBookFromFavorite}: TObject) {
                 </div>
             </Link>
             <div className='favorite-card__right-side'>
-                <p className={`favorite-card__title-${color}`}>{book.title}</p>
+                <div className='favorite-card__right-side-titles'>
+                    <h2 className={`favorite-card__title-${color}`}>{book.title}</h2>
+                    <p className={`favorite-card__subtitle`}>{book.subtitle}</p>
+                    <p className={`favorite-card__second-price-${color}`}>{book.price}</p>
+                </div>
                 <p className={`favorite-card__price-${color}`}>{book.price}</p>
                 <div className='favorite-card__icon' onClick={() => removeBookFromFavorite?.(book)}> 
                     <i className={`fa-solid fa-heart my-icon-${color}`}></i>

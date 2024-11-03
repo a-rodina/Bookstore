@@ -14,7 +14,14 @@ function Header() {
         <header className={`header-${color}`}>
             <div className='header-wrap'>
                 <Link to={`/`}><p className={`logo-${color}`}>BOOKSTORE</p></Link>
-                <Link to={`/search`}><Input inputType='text' placeholderText='Search' isActive={false}></Input></Link>
+                <Link to={`/search`}>
+                    <div className='header__search-block'>
+                        <Input inputType='text' placeholderText='Search' isActive={false}></Input>
+                    </div>
+                    <div className='header__search-icon'>
+                        <i className={`fa-solid fa-magnifying-glass my-icon-${color}`}></i>
+                    </div>
+                </Link>
                 <ul className='header-navigation'>
                     <li className='header-navigation__icons'>
                         <Link to={`/favorite`}>

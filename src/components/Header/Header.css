@@ -2,12 +2,18 @@
     width: 100%;
     height: 104px;
     background-color: #D7E4FD;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header-dark {
     width: 100%;
     height: 104px;
     background-color: #272727;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header-wrap {
@@ -29,6 +35,10 @@
     color: #ffffff;
     font-size: 28px;
     font-weight: 600;
+}
+
+.header__search-icon {
+    display: none;
 }
 
 .header-navigation {
@@ -85,4 +95,46 @@
 .my-icon-dark {
     font-size: 24px;
     color: #eeeeee;
+}
+
+@media (max-width: 815px) {
+    .header__search-block {
+        display: none;
+    }
+    .header__search-icon {
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 430px) {
+    .logo-light {
+        font-size: 25px;
+    }
+    .logo-dark {
+        font-size: 25px;
+    }
+    .my-icon-light {
+        font-size: 22px;
+    }
+    .my-icon-dark {
+        font-size: 22px;
+    }
+    .header__search-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .header-navigation__icons {
+        width: 40px;
+        height: 40px;
+    }
+    .header-navigation {
+        width: 150px;
+    }
+    .header-navigation__icons-theme {
+        width: 60px;
+    }
 }

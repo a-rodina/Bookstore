@@ -14,11 +14,9 @@ function CardList({books}: {books: TData[]}) {
     }
 
     return ( <>
-        <section className='all-books'>
-                <ul className='all-books__list'>
-                    {books.map((item: any) => <li key={item.isbn13} className='all-books__list-item'><Card book={item} addToFavorites={addToFavorites}/></li>)}
-                </ul>
-        </section>
+        <ul className='all-books__list'>
+            {books.map((item: any) => <li key={item.isbn13} className='all-books__list-item'><Card book={item} addToFavorites={addToFavorites}/></li>)}
+        </ul>
     </> );
 }
 

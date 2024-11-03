@@ -2,20 +2,10 @@
     padding: 10px 20px;
 }
 
-.label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 32px;
-    color: #313037;
-}
-
 .input {
     display: block;
     width: 480px;
     line-height: 56px;
-    outline: none;
     background-color: #FFFF;
     border: 1px solid #E7E7E7;
     cursor: pointer;
@@ -24,10 +14,7 @@
     text-align: left;
     padding-left: 20px;
     color: #313037;
-}
-
-.input:focus {
-    border: 2px solid #E7E7E7;
+    outline: none;
 }
 
 .input:disabled {
@@ -47,4 +34,20 @@
     text-align: left;
     padding-left: 20px;
     color: #313037;
+}
+
+@media (max-width: 537px) {
+    .input {
+        width: 360px;
+    }
+}
+
+@media (max-width: 417px) {
+    .input {
+        width: 280px;
+        line-height: 46px;
+    }
+    .form-wrap {
+        padding: 10px 10px;
+    }
 }

@@ -1,9 +1,11 @@
 .section__all-books-light {
     padding: 32px 0;
+    min-height: calc(100vh - 104px);
     background-color: #fff;
 }
 
 .section__all-books-dark {
     padding: 32px 0;
+    min-height: calc(100vh - 104px);
     background-color: #3f3e3e
 }

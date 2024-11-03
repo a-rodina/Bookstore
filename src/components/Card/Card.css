@@ -1,5 +1,5 @@
 .card-wrap {
-    width: 350px;
+    width: 340px;
 }
 
 .card__image-block-light {
@@ -76,4 +76,10 @@
     font-size: 24px;
     font-weight: 700;
     text-align: left;
+}
+
+@media (max-width: 430px) {
+    .card-wrap {
+        width: 272px;
+    }
 }

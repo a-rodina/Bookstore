@@ -18,4 +18,31 @@
     color:#eeeeee;
 }
 
+@media (max-width: 756px) {
+    .main-title-light {
+        font-size: 45px;
+        margin: 32px 0 36px;
+    }
+    .main-title-dark {
+        font-size: 45px;
+        margin: 32px 0 36px;
+    }
+}
 
+@media (max-width: 476px) {
+    .main-title-light {
+        font-size: 40px;
+    }
+    .main-title-dark {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 430px) {
+    .main-title-light {
+        font-size: 32px;
+    }
+    .main-title-dark {
+        font-size: 32px;
+    }
+}

@@ -1,15 +1,17 @@
 .section__search-books-light {
     padding: 32px 0;
+    min-height: calc(100vh - 104px);
     background-color: #fff;
 }
 
 .section__search-books-dark {
     padding: 32px 0;
+    min-height: calc(100vh - 104px);
     background-color:  #3f3e3e;
 }
 
-.theme-block {
-    height: 100vh;
+.search-block {
+    display: none;
 }
 
 .search-text-light {
@@ -20,4 +22,11 @@
 .search-text-dark {
     color: #eeeeee;
     font-size: 20px;
+}
+
+@media (max-width: 815px) {
+    .search-block {
+        display: flex;
+        justify-content: center;
+    }
 }
