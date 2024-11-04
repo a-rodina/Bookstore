@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { TData } from "../types/types";
-import { isConstructSignatureDeclaration } from "typescript";
 
 export const getBooks = createAsyncThunk(
     "book/getBooks", 
@@ -65,7 +64,8 @@ const bookSlice = createSlice({
         total: 0, 
         search: [], 
         totalCart: 0, 
-        totalFavorites: 0
+        totalFavorites: 0, 
+        // idToCount: new Map()
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useContext } from 'react';
 import { createdContext } from '../../providers/ThemeContext';
 
-function SmallCard({book, removeBookFromCart, addToCart}: TObject) {
+function SmallCard({book, removeBookFromCart, addToCart, itemCount}: TObject) {
 
     const data = useSelector((state: any) => state.book);
     const [color, setColor] = useContext(createdContext);
@@ -24,7 +24,7 @@ function SmallCard({book, removeBookFromCart, addToCart}: TObject) {
                         <div className='small-card__count-element' onClick={() => removeBookFromCart?.(book)}>
                             <i className={`fa-solid fa-minus my-icon-${color}`}></i>
                         </div>
-                        <div className={`small-card__count-element-${color}`}>1</div>
+                        <div className={`small-card__count-element-${color}`}>{itemCount}</div>
                         <div className='small-card__count-element' onClick={() => addToCart?.(book)}>
                             <i className={`fa-solid fa-plus my-icon-${color}`}></i>
                         </div>
