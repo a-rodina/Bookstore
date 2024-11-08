@@ -64,17 +64,14 @@ const bookSlice = createSlice({
         total: 0, 
         search: [], 
         totalCart: 0, 
-        totalFavorites: 0, 
-        // idToCount: new Map()
+        totalFavorites: 0
     },
     reducers: {
         addToCartRedux(state: any, {payload}: {payload :any}) {
             state.cart.push(payload);
         },
         addToFavoriteRedux(state: any, {payload}: {payload :any}) {
-            if (!state.favorites.find((item: TData) => item.isbn13 === payload.isbn13)) {
                 state.favorites.push(payload);
-            }
         },
         removeBookFromCartRedux(state: any, {payload}: {payload :any}) {
             const index = state.cart.findIndex((item: TData) => item.isbn13 === payload);

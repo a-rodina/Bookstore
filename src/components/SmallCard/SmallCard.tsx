@@ -20,6 +20,7 @@ function SmallCard({book, removeBookFromCart, addToCart, itemCount}: TObject) {
             <div className='small-card__right-side'>
                 <div className='small-card__about-block'>
                     <p className={`small-card__title-${color}`}>{book.title}</p>
+                    <p className='small-card__subtitle'>{book.subtitle}</p>
                     <div className='small-card__count'>
                         <div className='small-card__count-element' onClick={() => removeBookFromCart?.(book)}>
                             <i className={`fa-solid fa-minus my-icon-${color}`}></i>
@@ -29,6 +30,7 @@ function SmallCard({book, removeBookFromCart, addToCart, itemCount}: TObject) {
                             <i className={`fa-solid fa-plus my-icon-${color}`}></i>
                         </div>
                     </div>
+                    <p className={`small-card__second-price-${color}`}>{book.price}</p>
                 </div>
                 <p className={`small-card__price-${color}`}>{book.price}</p>
                 <div className='small-card__icon' onClick={() => removeBookFromCart?.(book)}>

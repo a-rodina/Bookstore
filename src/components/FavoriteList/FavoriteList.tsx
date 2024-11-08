@@ -13,10 +13,25 @@ function FavoriteList({books}: {books: TData[]}) {
         dispatch(calcTotalFavoritesRedux())
     }
 
+    function getUniqFavorites(books: TData[]) {
+        const uniqItems = new Set();
+        for (const book of books) {
+            uniqItems.add(book)
+        }
+        return Array.from(uniqItems.values());
+    }
+
+    function makeFavoritesCards(books: TData[]) {
+        const uniqFavorites = getUniqFavorites(books);
+        return uniqFavorites.map((item: any) => <li key={item.isbn13} className='favorite-card-list__item'>
+            <FavoriteCard removeBookFromFavorite={removeBookFromFavorite} book={item}/>
+            </li>)
+    }
+
     return ( <>
         <section className='section__favorite-list'>
             <ul className='favorite-card-list'>
-                {books.map((item: any) => <li key={item.isbn13} className='favorite-card-list__item'><FavoriteCard removeBookFromFavorite={removeBookFromFavorite} book={item}/></li>)}
+                {makeFavoritesCards(books)}
             </ul>
         </section>
 

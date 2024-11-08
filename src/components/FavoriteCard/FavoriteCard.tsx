@@ -18,7 +18,7 @@ function FavoriteCard({book, removeBookFromFavorite}: TObject) {
             <div className='favorite-card__right-side'>
                 <div className='favorite-card__right-side-titles'>
                     <h2 className={`favorite-card__title-${color}`}>{book.title}</h2>
-                    <p className={`favorite-card__subtitle`}>{book.subtitle}</p>
+                    <p className='favorite-card__subtitle'>{book.subtitle}</p>
                     <p className={`favorite-card__second-price-${color}`}>{book.price}</p>
                 </div>
                 <p className={`favorite-card__price-${color}`}>{book.price}</p>
