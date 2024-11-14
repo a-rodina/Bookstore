@@ -2,7 +2,7 @@ import { TData } from '../../types/types';
 import SmallCard from '../SmallCard/SmallCard';
 import './SmallCardList.css';
 import { useDispatch } from 'react-redux';
-import { addToCartRedux, calcTotalCartRedux, countCartRedux, removeBookFromCartRedux } from '../../slice/book';
+import { addToCartRedux, calcTotalCartRedux, countCartRedux, removeAllSameBooksRedux, removeBookFromCartRedux } from '../../slice/book';
 
 function SmallCardList({books}: {books: TData[]}) {
 
@@ -18,6 +18,10 @@ function SmallCardList({books}: {books: TData[]}) {
         dispatch(addToCartRedux(book))
         dispatch(countCartRedux())
         dispatch(calcTotalCartRedux())
+    }
+
+    function removeAllSameBook() {
+        dispatch(removeAllSameBooksRedux())
     }
 
     function itemCounting(books: TData[]) {
@@ -45,7 +49,7 @@ function SmallCardList({books}: {books: TData[]}) {
         const itemsCount = itemCounting(books);
         const uniqBooks = getUniqItems(books);
         return uniqBooks.map((item: any) => <li key={item.isbn13} className='small-card-list__item'>
-            <SmallCard itemCount={itemsCount.get(item.isbn13)} addToCart={addToCart} removeBookFromCart={removeBookFromCart} book={item}/>
+            <SmallCard itemCount={itemsCount.get(item.isbn13)} removeAllSameBook={removeAllSameBook} addToCart={addToCart} removeBookFromCart={removeBookFromCart} book={item}/>
             </li>)
     }
 

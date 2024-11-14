@@ -1,5 +1,17 @@
 .card-wrap {
     width: 340px;
+    position: relative;
+}
+
+.card__icon-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card__image-block-light {

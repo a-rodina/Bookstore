@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useContext } from 'react';
 import { createdContext } from '../../providers/ThemeContext';
 
-function SmallCard({book, removeBookFromCart, addToCart, itemCount}: TObject) {
+function SmallCard({book, removeBookFromCart, addToCart, itemCount, removeAllSameBook}: TObject) {
 
     const data = useSelector((state: any) => state.book);
     const [color, setColor] = useContext(createdContext);
@@ -33,7 +33,7 @@ function SmallCard({book, removeBookFromCart, addToCart, itemCount}: TObject) {
                     <p className={`small-card__second-price-${color}`}>{book.price}</p>
                 </div>
                 <p className={`small-card__price-${color}`}>{book.price}</p>
-                <div className='small-card__icon' onClick={() => removeBookFromCart?.(book)}>
+                <div className='small-card__icon' onClick={() => removeAllSameBook?.(book)}>
                     <i className={`fa-solid fa-xmark my-icon-${color}`}></i>
                 </div>
             </div>

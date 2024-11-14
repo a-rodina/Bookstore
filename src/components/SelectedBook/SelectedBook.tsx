@@ -4,11 +4,27 @@ import Title from '../Title/Title';
 import './SelectedBook.css';
 import { useContext } from 'react';
 import { createdContext } from '../../providers/ThemeContext';
+import { useSelector } from 'react-redux';
 
 
 function SelectedBook({book, addToCart, addToFavorites}: TObject) {
 
     const [color, setColor] = useContext(createdContext);
+    const data = useSelector((state: any) => state.book);
+
+    function getFavoriteIcon() {
+        let index = -1;
+        for (let i = 0; i < data.favorites.length; i++ ) {
+            if (data.favorites[i].isbn13 === book.isbn13) {
+                index = i;
+            }
+        }
+        if (index > -1) {
+            return <i className={`fa-solid fa-heart my-icon-${color}`}></i>
+        } else {
+            return <i className={`fa-regular fa-heart my-icon-${color}`}></i>
+        }
+    }
 
     return ( <>
         <Link to={`/`} className='icon-back'>
@@ -47,7 +63,7 @@ function SelectedBook({book, addToCart, addToFavorites}: TObject) {
             <p className={`selected-book__second-block-content-${color}`}>{book.desc}</p>
             <div className={`selected-book__second-block-like-${color}`} onClick={() => addToFavorites?.(book)}>
                 <p className={`like-text-${color}`}>Add to favorites</p>
-                <i className={`fa-regular fa-heart my-icon-${color}`}></i>
+                {getFavoriteIcon()}
             </div>
         </div>
     </> );

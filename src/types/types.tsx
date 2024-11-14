@@ -14,7 +14,8 @@ export type TObject = {
     addToFavorites?: (book: any) => void, 
     removeBookFromCart?: (book: any) => void, 
     removeBookFromFavorite?: (book: any) => void, 
-    itemCount?: any
+    itemCount?: any, 
+    removeAllSameBook?: (book: any) => void
 }
 
 export type TData = {

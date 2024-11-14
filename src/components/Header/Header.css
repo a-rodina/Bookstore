@@ -4,7 +4,7 @@
     background-color: #D7E4FD;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 30;
 }
 
 .header-dark {
@@ -13,7 +13,7 @@
     background-color: #272727;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 30;
 }
 
 .header-wrap {

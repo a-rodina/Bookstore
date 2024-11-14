@@ -84,8 +84,11 @@ const bookSlice = createSlice({
             }
         },
         removeBookFromCartRedux(state: any, {payload}: {payload :any}) {
-            const index = state.cart.findIndex((item: TData) => item.isbn13 === payload);
+            const index = state.cart.findIndex((item: TData) => item.isbn13 === payload.isbn13);
             state.cart.splice(index, 1);
+        },
+        removeAllSameBooksRedux(state: any) {
+            
         },
         countCartRedux(state: any) {
             const result = state.cart.reduce((count: number, item: any) => {
@@ -151,4 +154,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, countCartRedux, calcTotalCartRedux, calcTotalFavoritesRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, countCartRedux, calcTotalCartRedux, calcTotalFavoritesRedux, removeAllSameBooksRedux} = actions;
