@@ -3,12 +3,13 @@
 
 ## Установка:
 1. Клонивароние репозитория
+   
     `git clone https://github.com/a-rodina/Bookstore.git`
 
-2. Установка пакета npm
+3. Установка пакета npm
 
     `npm install`
 
-3. Запуск проекта
+4. Запуск проекта
 
     `npm run start`
