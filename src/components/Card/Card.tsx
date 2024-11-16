@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { TObject } from '../../types/types';
 import './Card.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { createdContext } from '../../providers/ThemeContext';
 import { useSelector } from 'react-redux';
 
@@ -27,9 +27,6 @@ function Card({book, addToFavorites}: TObject) {
 
     return (  <>
         <div className='card-wrap'>
-            <div className='card__icon-block'>
-                <i className={`fa-regular fa-eye my-icon-${color}`}></i>
-            </div>
             <Link to={`/${book.isbn13}`}>
                 <div className={`card__image-block-${color}`}>
                     <img className='card__image' alt='image' src={book.image}/>

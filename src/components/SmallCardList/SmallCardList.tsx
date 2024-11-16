@@ -2,7 +2,7 @@ import { TData } from '../../types/types';
 import SmallCard from '../SmallCard/SmallCard';
 import './SmallCardList.css';
 import { useDispatch } from 'react-redux';
-import { addToCartRedux, calcTotalCartRedux, countCartRedux, removeAllSameBooksRedux, removeBookFromCartRedux } from '../../slice/book';
+import { addToCartRedux, countCartRedux, removeAllSameBooksRedux, removeBookFromCartRedux } from '../../slice/book';
 
 function SmallCardList({books}: {books: TData[]}) {
 
@@ -11,17 +11,16 @@ function SmallCardList({books}: {books: TData[]}) {
     function removeBookFromCart(book: any) {
         dispatch(removeBookFromCartRedux(book))
         dispatch(countCartRedux())
-        dispatch(calcTotalCartRedux())
     }
 
     function addToCart(book: any) {
         dispatch(addToCartRedux(book))
         dispatch(countCartRedux())
-        dispatch(calcTotalCartRedux())
     }
 
-    function removeAllSameBook() {
-        dispatch(removeAllSameBooksRedux())
+    function removeAllSameBook(book: any) {
+        dispatch(removeAllSameBooksRedux(book))
+        dispatch(countCartRedux())
     }
 
     function itemCounting(books: TData[]) {
