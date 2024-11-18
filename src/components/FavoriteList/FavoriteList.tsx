@@ -2,7 +2,7 @@ import { TData } from '../../types/types';
 import './FavoriteList.css';
 import FavoriteCard from '../FavoriteCard/FavoriteCard';
 import { useDispatch } from 'react-redux';
-import { addToFavoriteRedux, calcTotalFavoritesRedux} from '../../slice/book';
+import { addToFavoriteRedux } from '../../slice/book';
 
 function FavoriteList({books}: {books: TData[]}) {
 
@@ -10,7 +10,6 @@ function FavoriteList({books}: {books: TData[]}) {
 
     function removeBookFromFavorite(book: any) {
         dispatch(addToFavoriteRedux(book))
-        dispatch(calcTotalFavoritesRedux())
     }
 
     function getUniqFavorites(books: TData[]) {
@@ -23,6 +22,7 @@ function FavoriteList({books}: {books: TData[]}) {
 
     function makeFavoritesCards(books: TData[]) {
         const uniqFavorites = getUniqFavorites(books);
+        console.log(uniqFavorites)
         return uniqFavorites.map((item: any) => <li key={item.isbn13} className='favorite-card-list__item'>
             <FavoriteCard removeBookFromFavorite={removeBookFromFavorite} book={item}/>
             </li>)

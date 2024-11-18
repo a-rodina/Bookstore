@@ -9,7 +9,7 @@ export type TInput = {
 }
 
 export type TObject = {
-    book: any,
+    book: TData,
     addToCart?: (book: any) => void,
     addToFavorites?: (book: any) => void, 
     removeBookFromCart?: (book: any) => void, 

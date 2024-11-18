@@ -82,6 +82,7 @@ const bookSlice = createSlice({
             } else {
                 state.favorites.push(payload);
             }
+            state.totalFavorites = state.favorites.length;
         },
         removeBookFromCartRedux(state: any, {payload}: {payload :any}) {
             const index = state.cart.findIndex((item: TData) => item.isbn13 === payload.isbn13);
@@ -96,9 +97,6 @@ const bookSlice = createSlice({
             }, 0);
             state.total = result;
             state.totalCart = state.cart.length;
-        }, 
-        calcTotalFavoritesRedux(state: any) {
-            state.totalFavorites = state.favorites.length;
         }
     },
     extraReducers: (builder) => {
@@ -152,4 +150,4 @@ const bookSlice = createSlice({
 const {actions, reducer} = bookSlice;
 
 export default reducer;
-export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, countCartRedux, calcTotalFavoritesRedux, removeAllSameBooksRedux} = actions;
+export const {addToCartRedux, addToFavoriteRedux, removeBookFromCartRedux, countCartRedux, removeAllSameBooksRedux} = actions;

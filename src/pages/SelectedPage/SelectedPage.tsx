@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SelectedBook from '../../components/SelectedBook/SelectedBook';
 import './SelectedPage.css';
 import { useContext, useEffect } from 'react';
-import { addToCartRedux, addToFavoriteRedux, calcTotalFavoritesRedux, countCartRedux, getOneBook } from '../../slice/book';
+import { addToCartRedux, addToFavoriteRedux, countCartRedux, getOneBook } from '../../slice/book';
 import { useParams } from 'react-router-dom';
 import Spinner from '../../components/Spinner/Spinner';
 import { createdContext } from '../../providers/ThemeContext';
@@ -25,7 +25,6 @@ function SelectedPage() {
 
     function addToFavorites(book: any) {
         dispatch(addToFavoriteRedux(book))
-        dispatch(calcTotalFavoritesRedux())
     }
 
     return ( <>

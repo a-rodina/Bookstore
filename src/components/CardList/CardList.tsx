@@ -2,7 +2,7 @@ import { TData } from '../../types/types';
 import Card from '../Card/Card';
 import './CardList.css';
 import { useDispatch } from 'react-redux';
-import { addToFavoriteRedux, calcTotalFavoritesRedux } from '../../slice/book';
+import { addToFavoriteRedux } from '../../slice/book';
 
 function CardList({books}: {books: TData[]}) {
 
@@ -10,7 +10,6 @@ function CardList({books}: {books: TData[]}) {
 
     function addToFavorites(book: any) {
         dispatch(addToFavoriteRedux(book))
-        dispatch(calcTotalFavoritesRedux())
     }
 
     return ( <>
