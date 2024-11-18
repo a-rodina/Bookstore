@@ -22,7 +22,6 @@ function FavoriteList({books}: {books: TData[]}) {
 
     function makeFavoritesCards(books: TData[]) {
         const uniqFavorites = getUniqFavorites(books);
-        console.log(uniqFavorites)
         return uniqFavorites.map((item: any) => <li key={item.isbn13} className='favorite-card-list__item'>
             <FavoriteCard removeBookFromFavorite={removeBookFromFavorite} book={item}/>
             </li>)
